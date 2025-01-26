@@ -1,15 +1,18 @@
 "use client"
 import { useState } from "react"
 import EmailAuth from '../../component/EmailAuth'
+import { useRouter } from "next/navigation"
 
 export default function Home() {
    const [email, setEmail] = useState("")
    const [alertAuth,setAlertAuth] = useState(false)
+  const router = useRouter()
 
    const submitAuth = (e: any) => {
      e.preventDefault()
      setAlertAuth(true)
      console.log(email)
+     router.push("../page/user")
    }
    
    return (
