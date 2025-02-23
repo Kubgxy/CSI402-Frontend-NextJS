@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 print "Build"
-                docker build -t csi402labapprouter .
+                sh 'docker build -t csi402labapprouter .' 
             }
         }
         stage('Testing') {
