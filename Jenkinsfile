@@ -12,9 +12,10 @@ pipeline {
                 bat 'docker build -t csi402labapprouter .' 
             }
         }
-        stage('Testing') {
+        stage('StartContainer') {
             steps {
-                print "Testing"
+                print "Run Container"
+                bat 'docker run -d --name csi402labapprouter -p 50500:3000 csi402labapprouter:latest'
             }
         }
     }
